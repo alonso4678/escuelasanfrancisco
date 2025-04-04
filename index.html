@@ -201,6 +201,66 @@
             transform: scale(1.05);
         }
         
+        /* News Section */
+        .news-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+        
+        .news-article {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .news-content {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .news-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .news-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .news-content p {
+            margin-bottom: 15px;
+            color: #444;
+        }
+        
+        .news-image {
+            height: 100%;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .news-image:hover img {
+            transform: scale(1.03);
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .header-container {
@@ -219,6 +279,15 @@
             
             .hero h1 {
                 font-size: 2rem;
+            }
+            
+            .news-article {
+                grid-template-columns: 1fr;
+            }
+            
+            .news-image {
+                height: 250px;
+                order: -1;
             }
         }
         
@@ -259,7 +328,9 @@
             <div class="news-content">
                 <span class="news-date">Martes 25 de marzo de 2025</span>
                 <h3 class="news-title">RADIOS CARIÑOSA, ALBORADA Y CANAL 1 TRAEN IMPORTANTE DONACIÓN DE ÚTILES</h3>
-                <p>Radio Cariñosa, representada por su dueño don Jorge Vaccaro Collao, visitó nuestra escuela, acompañado del conocido locutor popular "el Huaso Cuncuna" trayendo una gran cantidad de útiles escolares para nuestros estudiantes, que los mismos auditores de la radio ayudaron a reunir. Nuestros estudiantes y todos quienes laboramos en la escuela estamos muy contentos y agradecidos por esta importante donación que, sin duda les facilitará su proceso de enseñanza aprendizaje. Agradecemos a don Jorge Vaccaro y sus medios de comunicación por esta gran ayuda entregada.</p>
+                <p>Radio Cariñosa, representada por su dueño don Jorge Vaccaro Collao, visitó nuestra escuela, acompañado del conocido locutor popular "el Huaso Cuncuna" trayendo una gran cantidad de útiles escolares para nuestros estudiantes, que los mismos auditores de la radio ayudaron a reunir.</p>
+                <p>Nuestros estudiantes y todos quienes laboramos en la escuela estamos muy contentos y agradecidos por esta importante donación que, sin duda les facilitará su proceso de enseñanza aprendizaje.</p>
+                <p>Agradecemos a don Jorge Vaccaro y sus medios de comunicación por esta gran ayuda entregada.</p>
             </div>
             <div class="news-image">
                 <img src="images/utiles_radio_carinosa.jpg" alt="Donación de útiles escolares">
@@ -270,7 +341,8 @@
             <div class="news-content">
                 <span class="news-date">Martes 25 de marzo de 2025</span>
                 <h3 class="news-title">TALLER DE HUERTO EN SU SEGUNDO AÑO</h3>
-                <p>El día de hoy, continuó el Taller de Huerto que se venía dando desde el año pasado. Los monitores realizaron actividades lúdicas a fin de interesar a los estudiantes en el tema. La actividad viene del año pasado.</p>
+                <p>El día de hoy, continuó el Taller de Huerto que se venía dando desde el año pasado. Los monitores realizaron actividades lúdicas a fin de interesar a los estudiantes en el tema.</p>
+                <p>La actividad viene del año pasado y ha demostrado ser muy beneficiosa para el desarrollo de habilidades prácticas y conciencia ambiental en nuestros estudiantes.</p>
             </div>
             <div class="news-image">
                 <img src="images/taller_huerto_2025.jpg" alt="Taller de huerto escolar">
