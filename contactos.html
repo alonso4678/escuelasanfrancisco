@@ -181,55 +181,6 @@
             color: #666;
         }
         
-        /* Contact Form */
-        .contact-form {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            padding: 30px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-        
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background-color: var(--accent-color);
-        }
-        
         /* Map Section */
         .map-container {
             grid-column: 1 / -1;
@@ -318,6 +269,16 @@
             
             <div class="contact-item">
                 <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                    <h3>Correo Electrónico</h3>
+                    <a href="mailto:g43.sanfrancisco@gmail.com">g43.sanfrancisco@gmail.com</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
                     <i class="fab fa-whatsapp"></i>
                 </div>
                 <div class="contact-text">
@@ -346,57 +307,12 @@
                 </div>
             </div>
             
-            <div class="contact-item">
-                <div class="contact-icon">
-                    <i class="fas fa-clock"></i>
-                </div>
-                <div class="contact-text">
-                    <h3>Horario de Atención</h3>
-                    <p>Lunes a Viernes<br>8:00 - 13:00 / 14:00 - 17:00</p>
-                </div>
-            </div>
             
             <div class="qr-code">
                 <img src="images/qr-ubicacion.png" alt="Código QR para ubicación">
                 <p>Escanee este código para obtener direcciones</p>
             </div>
         </div>
-        
-        <div class="contact-form">
-    <h2 class="contact-title">Formulario de Contacto</h2>
-    <form action="https://formspree.io/f/g43sanfrancisco@gmail.com" method="POST">
-        <!-- Campo oculto para asunto del email -->
-        <input type="hidden" name="_subject" value="Nuevo mensaje del sitio web">
-        
-        <!-- Campos existentes (no cambian) -->
-        <div class="form-group">
-            <label for="name">Nombre Completo</label>
-            <input type="text" id="name" name="name" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="email">Correo Electrónico</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="phone">Teléfono</label>
-            <input type="tel" id="phone" name="phone">
-        </div>
-        
-        <div class="form-group">
-            <label for="subject">Asunto</label>
-            <input type="text" id="subject" name="subject" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="message">Mensaje</label>
-            <textarea id="message" name="message" required></textarea>
-        </div>
-        
-        <button type="submit" class="submit-btn">Enviar Mensaje</button>
-    </form>
-</div>
         
         <div class="map-container">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3204.216977301047!2d-72.48259202446523!3d-36.57298877231267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9668e485ee4be01f%3A0x234636daebdf95ec!2sEscuela%20San%20Francisco%20de%20Asis!5e0!3m2!1ses!2scl!4v1743726528469!5m2!1ses!2scl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
