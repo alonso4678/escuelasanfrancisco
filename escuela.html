@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Escuela - San Francisco de Asís</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2E7D32; /* Verde oscuro */
+            --secondary-color: #FFC107; /* Amarillo */
+            --accent-color: #D32F2F; /* Rojo */
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo img {
+            height: 70px;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a i {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/portada.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 40px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        /* Content Section */
+        .content-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+        
+        .section-subtitle {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+        }
+        
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .feature-item {
+            background: #f1f8e9;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-icon {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .mission-vision {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .mission-vision-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 25px;
+            border-top: 5px solid var(--primary-color);
+        }
+        
+        .mission-vision-title {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/membrete_SAN_FRANCISCO.png" alt="Escuela San Francisco de Asís">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="escuela.html" class="active"><i class="fas fa-home"></i>Escuela</a></li>
+                    <li><a href="index.html" ><i class="fas fa-book-open"></i>Informaciones</a></li>
+                    <li><a href="documentos.html"><i class="fas fa-layer-group"></i>Documentos</a></li>
+                    <li><a href="contactos.html"><i class="fas fa-phone"></i>Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <h1>Nuestra Escuela</h1>
+    </section>
+    
+    <div class="content-container">
+        <div class="section">
+            <h2 class="section-title">Escuela G-43 San Francisco de Asís</h2>
+            <p>La Unidad Educativa pertenece a la Ilustre Municipalidad de Portezuelo, ubicada a 8 Km de la comuna, en el sector rural llamado San Francisco.</p>
+            
+            <div class="highlight-box">
+                <h3 class="section-subtitle">Infraestructura</h3>
+                <p>Nuestra escuela consta de un piso con instalaciones amplias, iluminadas y con adecuada ventilación y calefacción (con recursos aportados por la SEP).</p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-door-open"></i>
+                        </div>
+                        <div>
+                            <strong>3 salas de clases</strong> equipadas con material y mobiliario adecuado
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <div>
+                            <strong>1 sala de Programa de Integración Escolar</strong> para atención a la diversidad
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div>
+                            <strong>1 laboratorio computacional</strong> para desarrollo de habilidades digitales
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div>
+                            <strong>Biblioteca CRA</strong> (Centro de Recursos para el Aprendizaje)
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <div>
+                            <strong>Comedor y cocina</strong> para estudiantes y profesores
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <div>
+                            <strong>Multicancha techada</strong>, mini gimnasio y cancha de tierra
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Nuestro Proyecto Educativo</h2>
+            
+            <h3 class="section-subtitle">Enfoque Curricular</h3>
+            <p>La Escuela basa su enseñanza en el currículum nacional (Bases Curriculares y Planes y Programas de Estudio) y brinda atención a la diversidad con un heterogéneo equipo Multiprofesional PIE para favorecer el aprendizaje de todos los alumnos.</p>
+            
+            <h3 class="section-subtitle">Sellos Educativos</h3>
+            
+            <div class="highlight-box">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <strong>Comunidad Educativa centrada en los procesos de aprendizaje</strong>, reconociendo la riqueza de la diversidad y brindando apoyos pertinentes a todos los estudiantes.
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div>
+                        <strong>Contexto valórico</strong> (respetuosos, participativos, empáticos). Fomentamos hábitos, actitudes y valores para la vida familiar y social.
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div>
+                        <strong>Desarrollo de habilidades artísticas-deportivas</strong> que fortalezcan la personalidad, autoestima y habilidades sociales de nuestros estudiantes.
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div>
+                        <strong>Hábitos de vida saludable</strong>. Promovemos actitudes tendientes a una vida sana que se expresen en los comportamientos diarios.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mission-vision">
+                <div class="mission-vision-item">
+                    <h3 class="mission-vision-title">Visión</h3>
+                    <p>Ser una institución Educativa reconocida por desarrollar procesos pedagógicos de calidad, con sólida formación valórica, con altas expectativas de logro y énfasis en el desarrollo de habilidades artísticas-deportivas y hábitos de vida saludable; que permita a los estudiantes responder con éxito a los requerimientos actuales.</p>
+                </div>
+                
+                <div class="mission-vision-item">
+                    <h3 class="mission-vision-title">Misión</h3>
+                    <p>Educar estudiantes de manera integral, en un ambiente favorable y contexto valórico, desarrollando competencias en los procesos pedagógicos y artísticos-deportivos, promoviendo hábitos de vida saludable para un buen vivir.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Galería de Nuestra Escuela</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="images/portada.jpg" alt="Edificio de la escuela">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/alimentación_sana.jpg" alt="Taller Vida Sana">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/deporte.jpg" alt="Actividades deportivas">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/prat_02.jpg" alt="Salidas Pedagógicas">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Escuela G-43 San Francisco de Asís, Portezuelo. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
