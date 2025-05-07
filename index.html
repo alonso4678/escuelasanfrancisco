@@ -370,6 +370,52 @@
     </section>
     
     <div class="news-container">
+        <!-- Nueva noticia - Huerto Escolar -->
+        <article class="news-article">
+            <div class="news-content">
+                <span class="news-date">29 de abril de 2025</span>
+                <h3 class="news-title">HUERTO ESCOLAR; UNA JORNADA DE APRENDIZAJE</h3>
+                <p>Hoy nuestros estudiantes vivieron una experiencia única junto a los monitores del <strong>huerto escolar</strong>, sumergiéndose en el maravilloso mundo de la agricultura sostenible.</p>
+                <p><strong>Aprendieron técnicas esenciales</strong> como la siembra de almácigos, el manejo de riego en bancales y los secretos del compostaje (¡incluyendo el fascinante mundo de las lombrices en la vermicompostera!).</p>
+                <p><strong>Recibieron un completo set de herramientas</strong> para poner en práctica todo lo aprendido y seguir cultivando su propio huerto con entusiasmo.</p>
+                <p><strong>Descubrieron la importancia de la paciencia y el cuidado</strong> al trabajar con la tierra, valores que sin duda llevarán consigo en su vida cotidiana.</p>
+                <p>Esta actividad no solo les enseñó sobre agricultura, sino también sobre <strong>trabajo en equipo, responsabilidad y conexión con la naturaleza</strong>.</p>
+                <p>¡Estamos seguros de que estos conocimientos serán semillas que crecerán en su futuro! ¿Qué les gustaría plantar primero?</p>
+            </div>
+            <div class="news-image">
+                <img src="images/huerto.jpg" alt="Huerto escolar">
+            </div>
+        </article>
+
+        <!-- Nueva noticia - Día del Libro -->
+        <article class="news-article">
+            <div class="news-content">
+                <span class="news-date">29 de abril de 2025</span>
+                <h3 class="news-title">¡UNA JORNADA MÁGICA DE APRENDIZAJE Y DIVERSIÓN!</h3>
+                <p>Hoy 29 de abril, celebramos con alegría el Día de la Convivencia Escolar y el Día del Libro, transformando nuestra escuela en un espacio lleno de creatividad, imaginación y trabajo en equipo.</p>
+                <p>Los estudiantes se disfrazaron de sus personajes literarios favoritos, dando vida a las páginas de los libros con su entusiasmo. Desde clásicos de la literatura hasta héroes modernos, cada disfraz contaba una historia única.</p>
+                <p>Los juegos de palabras fueron los protagonistas en una actividad muy divertida donde los estudiantes demostraron su ingenio y creatividad.</p>
+                <p>Más allá de la diversión, este día reforzó valores como el respeto, la colaboración y el amor por la lectura. Ver a nuestros estudiantes compartir, reír y aprender juntos nos llena de orgullo.</p>
+            </div>
+            <div class="news-image">
+                <img src="images/dia_libro.jpg" alt="Día del Libro">
+            </div>
+        </article>
+
+        <!-- Nueva noticia - Carabineros -->
+        <article class="news-article">
+            <div class="news-content">
+                <span class="news-date">27 de abril de 2025</span>
+                <h3 class="news-title">¡NUESTRO MÁS SINCERO SALUDO Y AGRADECIMIENTO A CARABINEROS DE CHILE!</h3>
+                <p>Desde la Escuela San Francisco de Asís, toda nuestra comunidad educativa les saluda y reconoce su invaluable labor y dedicación. Cada día, su compromiso con la seguridad de nuestras familias, niños y entorno rural demuestra el verdadero espíritu de servicio que los caracteriza.</p>
+                <p>Su presencia no solo protege, sino que también inspira a nuestros estudiantes a ser ciudadanos responsables y comprometidos con el bien común.</p>
+                <p>¡Por su vocación, esfuerzo y corazón al servicio de Chile!; Muchas gracias.</p>
+            </div>
+            <div class="news-image">
+                <img src="images/carabineros.jpg" alt="Carabineros de Chile">
+            </div>
+        </article>
+
         <!-- Nueva noticia - Semana de la Cultura y el Arte -->
         <article class="news-article">
             <div class="news-content">
@@ -462,4 +508,44 @@
                 <p><strong>Los resultados fueron los siguientes:</strong></p>
                 <ul style="margin-top: 10px; margin-left: 20px;">
                     <li><strong>Presidenta:</strong> Mailyn Maldonado</li>
-                   
+                    <li><strong>Vice presidenta:</strong> Antonia Medina</li>
+                    <li><strong>Secretario:</strong> Cristofer Hormazabal</li>
+                    <li><strong>Vice secretaria:</strong> Martina Campos</li>
+                    <li><strong>Tesorera:</strong> Anay González</li>
+                </ul>
+            </div>
+            <div class="news-image">
+                <img src="images/eleccion_centro_alumnos_2025.jpg" alt="Elecciones centro de alumnos">
+            </div>
+        </article>
+    </div>
+    
+    <footer>
+        <p>© 2025 Escuela San Francisco. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Menu Toggle Functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            menuToggle.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    mainNav.classList.remove('active');
+                    menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
